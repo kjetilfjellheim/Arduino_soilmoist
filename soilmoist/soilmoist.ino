@@ -15,7 +15,10 @@
  * 128x64 OLED screen.
  */
 Adafruit_SSD1306 display(OLED_RESET);
-
+/**
+ * OLED display address
+ */
+#define DISPLAY_ADDRESS 0x3C
 /**
  * Number of measurements averaged.
  */
@@ -171,7 +174,7 @@ static const unsigned char PROGMEM BMP_VERY_WET[] =
  */
 void setup()   {                
   Serial.begin(9600);  
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);   
+  display.begin(SSD1306_SWITCHCAPVCC, DISPLAY_ADDRESS);   
 }
 
 /**
